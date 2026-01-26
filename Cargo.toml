@@ -1,0 +1,12 @@
+[workspace]
+resolver = "2"
+default-members = ["crates/swapdirs"]
+members = ["crates/swapdirs", "crates/swapcore"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+description = "dir swapping algorithm tool"
+repository = "https://github.com/xfeusw/relocator"
+authors = ["xfeusw"]

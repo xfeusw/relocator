@@ -1,0 +1,13 @@
+[package]
+name = "swapcore"
+authors.workspace = true
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+anyhow = "1.0.100"
+bytesize = "2.3.1"
+fs2 = "0.4.3"
+walkdir = "2.5.0"
