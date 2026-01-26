@@ -7,7 +7,7 @@ license.workspace = true
 repository.workspace = true
 
 [[bin]]
-name = "server"
+name = "swapdirs"
 path = "src/main.rs"
 
 [dependencies]
