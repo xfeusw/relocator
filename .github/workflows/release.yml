@@ -28,7 +28,13 @@ jobs:
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force dist | Out-Null
-          Copy-Item target\release\swapdirs.exe dist\swapdirs.exe
+          if (Test-Path target\release\swapdirs.exe) {
+            Copy-Item target\release\swapdirs.exe dist\swapdirs.exe
+          } elseif (Test-Path target\release\server.exe) {
+            Copy-Item target\release\server.exe dist\swapdirs.exe
+          } else {
+            throw "No expected exe found in target\release (swapdirs.exe or server.exe)"
+          }
 
       - name: Checksums
         shell: pwsh
@@ -39,6 +45,7 @@ jobs:
       - name: Create GitHub Release + upload exe
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/swapdirs.exe
+          files: |
+            dist/swapdirs.exe
             dist/swapdirs.exe.sha256
           generate_release_notes: true
