@@ -1,25 +1,25 @@
-{pkgs ? import <nixpkgs> {}}: let
-  mkDevShell = pkgs:
-    pkgs.mkShell {
-      nativeBuildInputs = with pkgs; [
-        rustc
-        cargo
-        rustfmt
-        clippy
+{
+  pkgs,
+  toolchain ? pkgs.rustc,
+}:
+pkgs.mkShell {
+  nativeBuildInputs = with pkgs; [
+    toolchain
 
-        cargo-nextest
-        cargo-watch
-        just
+    cargo-nextest
+    cargo-watch
+    just
+    fd
 
-        pkg-config
-        fd
-      ];
+    # Windows GNU cross linker
+    pkgsCross.mingwW64.stdenv.cc
 
-      buildInputs = with pkgs; [
-        openssl
-      ];
+    # Optional: run exe on Linux
+    wineWowPackages.stable
+  ];
 
-      RUST_BACKTRACE = "1";
-    };
-in
-  mkDevShell pkgs
+  # nativeBuildInputs = nativeBuildInputs ++ [ pkgs.pkg-config ];
+  # buildInputs = [ pkgs.openssl ];
+
+  RUST_BACKTRACE = "1";
+}
