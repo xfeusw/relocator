@@ -1,0 +1,17 @@
+[package]
+name = "swapdirs"
+authors.workspace = true
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[[bin]]
+name = "server"
+path = "src/main.rs"
+
+[dependencies]
+swapcore = { path = "../swapcore"}
+
+anyhow = "1.0.100"
+clap = { version = "4.5.54", features = ["derive"] }
