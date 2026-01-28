@@ -14,14 +14,14 @@ This tool exists for real problems like:
 
 ## Key Features
 
-- 📦 **Largest-first greedy algorithm** (minimizes deadlocks)
-- 🔁 **True swap** without requiring full free space
-- 🧮 **Feasibility check** before touching your files
-- 🧪 **Dry-run mode** (see exactly what will happen)
-- 📁 **Recursive directory handling** (files only)
-- 🧱 **Reserve space protection** (never fully fill a disk)
-- 🛠 **CLI-first**, scriptable, predictable
-- 🪟 **Windows-friendly** (native `.exe` releases)
+- **Largest-first greedy algorithm** (minimizes deadlocks)
+- **True swap** without requiring full free space
+- **Feasibility check** before touching your files
+- **Dry-run mode** (see exactly what will happen)
+- **Recursive directory handling** (files only)
+- **Reserve space protection** (never fully fill a disk)
+- **CLI-first**, scriptable, predictable
+- **Windows-friendly** (native `.exe` releases)
 
 ---
 
@@ -44,7 +44,7 @@ This is **not copying**. It is a controlled relocation.
 
 Download the latest release from GitHub:
 
-👉 https://github.com/xfeusw/relocator/releases
+https://github.com/xfeusw/relocator/releases
 
 Unzip and use `swapdirs.exe`.
 
